@@ -1,5 +1,5 @@
 {
-  "name": "dev-site-",
+  "name": "dev-site-2",
   "version": "1.0.0",
   "private": true,
   "description": "My Gatsby site",
@@ -19,11 +19,16 @@
     "gatsby": "^2.26.1",
     "gatsby-plugin-image": "^0.3.0",
     "gatsby-plugin-react-helmet": "^3.6.0",
+    "gatsby-plugin-sass": "^2.7.0",
     "gatsby-plugin-sharp": "^2.10.0",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
+    "node-sass": "^4.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0"
-  }
+    "react-helmet": "^6.1.0",
+    "react-query": "^2.26.3",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
+  },
+  "devDependencies": {}
 }
