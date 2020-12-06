@@ -30,5 +30,9 @@
     "react-query": "^2.26.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "eslint-plugin-react": "^7.21.5"
+  }
 }
