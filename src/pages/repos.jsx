@@ -26,7 +26,7 @@ const ReposPage = () => {
       )}
       {(isLoading || isFetching) && (
         <div className="fixed top-0 left-0 h-screen w-full grid">
-          <div className="place-self-center text-xl bg-gray-800 rounded-xl p-4 px-6">
+          <div className="place-self-center text-xl bg-gray-300 text-black dark:bg-gray-800 dark:text-white rounded-xl p-4 px-6">
             loading...
           </div>
         </div>

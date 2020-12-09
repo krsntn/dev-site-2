@@ -1,10 +1,10 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
-import syntaxLightTheme from 'prism-react-renderer/themes/github';
-import syntaxDarkTheme from 'prism-react-renderer/themes/nightOwl';
+import syntaxLightTheme from '../utils/syntaxHighlightingLightTheme';
+import syntaxDarkTheme from 'prism-react-renderer/themes/vsDark';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import { isLocalStorageDarkTheme } from '../utils/theme';
+import { isCurrentDarkTheme } from '../utils/theme';
 
 let tableRowIndex = 1;
 const components = {
@@ -22,7 +22,7 @@ const components = {
   },
   h2: (props) => {
     return (
-      <h2 className="text-xl font-medium mb-4 mt-8">
+      <h2 className="text-xl font-medium border-none mb-4 mt-8">
         <a
           href={`#${props.children.replaceAll(' ', '-').toLowerCase()}`}
           {...props}
@@ -97,11 +97,11 @@ const components = {
             ? matches.groups.lang
             : ''
         }
-        theme={isLocalStorageDarkTheme ? syntaxDarkTheme : syntaxLightTheme}
+        theme={isCurrentDarkTheme() ? syntaxDarkTheme : syntaxLightTheme}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
-            className={`${className} my-4 p-4 text-xs whitespace-pre-wrap rounded bg-gray-800`}
+            className={`${className} my-4 p-4 text-sm overflow-x-auto rounded bg-gray-800`}
             style={style}
           >
             {tokens.map((line, i) => (

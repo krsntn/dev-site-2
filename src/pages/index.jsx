@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Helmet from '../components/Helmet';
-import css from '../styles/index.module.scss';
+import NightButton from '../components/NightButton';
+import '../styles/index.css';
 
 const data = [
   {
@@ -48,17 +49,11 @@ const data = [
   },
 ];
 
-const textshadow = {
-  '&:hover': {
-    textShadow: '#0f0 0 2px 5px',
-  },
-};
-
 const IndexPage = () => {
   return (
     <main className="min-h-screen bg-gray-100 text-black dark:bg-black dark:text-terminalgreen">
       <Helmet title="Home Page" />
-      <div className="test" />
+      <NightButton />
       <div>krsn&apos;s dev-site@mac</div>
 
       <div className="mt-10">few years experience in front end development</div>
@@ -69,11 +64,11 @@ const IndexPage = () => {
             <div className="w-36 inline-block">
               {'-->'}{' '}
               {item.type === 'external' ? (
-                <a className={css.textShadow} href={item.url}>
+                <a className="textShadow" href={item.url}>
                   {item.name}
                 </a>
               ) : (
-                <Link className={css.textShadow} to={item.url}>
+                <Link className="textShadow" to={item.url}>
                   {item.name}
                 </Link>
               )}

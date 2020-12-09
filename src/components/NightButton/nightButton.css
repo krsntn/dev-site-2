@@ -1,0 +1,8 @@
+.circle {
+  left: -20%;
+  top: -25%;
+}
+
+.circle[data-checked='true'] {
+  transform: translateX(calc(100%));
+}

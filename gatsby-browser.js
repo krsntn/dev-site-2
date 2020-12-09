@@ -1,4 +1,4 @@
-import './src/styles/global.scss';
+import './src/styles/global.css';
 
 const React = require('react');
 const GlobalLayout = require('./src/components/GlobalLayout').default;
