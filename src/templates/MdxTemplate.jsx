@@ -13,9 +13,9 @@ const components = {
     return (
       <h1 className="text-2xl font-medium mb-4 mt-8">
         <a
-          href={`#${props.children.replaceAll(' ', '-').toLowerCase()}`}
+          href={`#${props.children.replace(/ /, '-').toLowerCase()}`}
           {...props}
-          id={props.children.replaceAll(' ', '-').toLowerCase()}
+          id={props.children.replace(/ /, '-').toLowerCase()}
         />
       </h1>
     );
@@ -24,9 +24,9 @@ const components = {
     return (
       <h2 className="text-xl font-medium border-none mb-4 mt-8">
         <a
-          href={`#${props.children.replaceAll(' ', '-').toLowerCase()}`}
+          href={`#${props.children.replace(/ /, '-').toLowerCase()}`}
           {...props}
-          id={props.children.replaceAll(' ', '-').toLowerCase()}
+          id={props.children.replace(/ /, '-').toLowerCase()}
         />
       </h2>
     );
