@@ -9,7 +9,7 @@ const NotFound = () => {
         <Link to="/">
           <button
             type="button"
-            className="bg-primary text-white px-3 py-2 rounded border-b-4 border-primary0 hover:bg-primary3 hover:border-primary"
+            className="bg-primary text-base text-white px-3 py-2 rounded border-b-4 border-primary0 hover:bg-primary3 hover:border-primary"
           >
             back to home
           </button>
