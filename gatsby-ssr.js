@@ -1,10 +1,13 @@
 import React from 'react';
-import { initialLoadTheme } from './src/utils/theme';
+import { initialLoadTheme, setNewTheme } from './src/utils/theme';
 
 const InitialSiteTheme = () => {
   const codeToRunOnClient = `
 (function() {
+  ${setNewTheme}
   ${initialLoadTheme}
+
+  initialLoadTheme();
 })()
   `;
 

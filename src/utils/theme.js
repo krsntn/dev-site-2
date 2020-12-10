@@ -13,6 +13,7 @@ export function setNewTheme(theme) {
     if (theme === 'dark') {
       localStorage.setItem('theme', theme);
       document.querySelector('html').classList.add('dark');
+      document.querySelector('html').style.background = 'black';
     } else {
       document.querySelector('html').classList.remove('dark');
       localStorage.theme = 'light';

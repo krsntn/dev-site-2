@@ -8,7 +8,8 @@ const NightButton = (props) => {
   const [isDarkMode, setIsDarkMode] = useState(isCurrentDarkTheme);
 
   useEffect(() => {
-    setNewTheme(isDarkMode ? 'dark' : 'light');
+    if (isCurrentDarkTheme() !== isDarkMode)
+      setNewTheme(isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   const data = useStaticQuery(
