@@ -47,6 +47,12 @@ const data = [
     type: 'internal',
     url: '/vscode',
   },
+  {
+    name: 'macos',
+    description: 'macos configuration',
+    type: 'internal',
+    url: '/macos',
+  },
 ];
 
 const IndexPage = () => {

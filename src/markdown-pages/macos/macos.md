@@ -5,7 +5,7 @@ featuredImage: './cover.jpg'
 
 # .macos
 
-```
+```bash
 
 #!/usr/bin/env bash
 
@@ -181,7 +181,7 @@ defaults write com.apple.dock showhidden -bool true
 defaults write com.apple.dock autohide-delay -int 0
 
 # Auto-hide time modifier of the Dock
-defaults write com.apple.dock autohide-time-modifier -string 0.25
+defaults write com.apple.dock autohide-time-modifier -float 0.25
 
 # Disable show recent apps
 defaults write com.apple.dock show-recents -int 0
@@ -201,4 +201,26 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 # Disable smart quotes as it’s annoying for messages that contain code
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+
+for app in "Activity Monitor" \
+  "Address Book" \
+  "Calendar" \
+  "cfprefsd" \
+  "Contacts" \
+  "Dock" \
+  "Finder" \
+  "Mail" \
+  "Messages" \
+  "Photos" \
+  "Safari" \
+  "SystemUIServer" \
+  "iCal"; do
+  killall "${app}" &> /dev/null
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."
+
 ```

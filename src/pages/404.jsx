@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <div className="bg-black min-h-screen">
       <div className="h-40 flex flex-col justify-around items-center text-white">
-        <div className="text-7xl">404 NOT FOUND.</div>
+        <div className="text-4xl">404 NOT FOUND.</div>
         <Link to="/">
           <button
             type="button"
