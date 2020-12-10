@@ -1,7 +1,7 @@
 import './src/styles/global.css';
 
-const React = require('react');
-const GlobalLayout = require('./src/components/GlobalLayout').default;
+import React from 'react';
+import GlobalLayout from './src/components/GlobalLayout';
 
 export const wrapPageElement = ({ element, props }) => {
   // props provide same data to Layout as Page element will get

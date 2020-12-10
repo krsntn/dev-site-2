@@ -10,10 +10,10 @@ const GlobalLayout = ({ children }) => {
   }, [window.location.pathname]);
 
   return (
-    <div>
+    <React.Fragment>
       <div>{children}</div>
       {showFooter && <Footer />}
-    </div>
+    </React.Fragment>
   );
 };
 
