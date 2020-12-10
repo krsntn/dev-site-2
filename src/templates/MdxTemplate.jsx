@@ -6,16 +6,21 @@ import syntaxDarkTheme from 'prism-react-renderer/themes/vsDark';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { isCurrentDarkTheme } from '../utils/theme';
 
+function replacePathname(pathname) {
+  return pathname.replace(/ /, '-').toLowerCase();
+}
+
 let tableRowIndex = 1;
+
 const components = {
   p: (props) => <p {...props} className="text-base font-light mb-4" />,
   h1: (props) => {
     return (
       <h1 className="text-2xl font-medium mb-4 mt-8">
         <a
-          href={`#${props.children.replace(/ /, '-').toLowerCase()}`}
+          href={`#${replacePathname(props.children)}`}
           {...props}
-          id={props.children.replace(/ /, '-').toLowerCase()}
+          id={replacePathname(props.children)}
         />
       </h1>
     );
@@ -24,9 +29,9 @@ const components = {
     return (
       <h2 className="text-xl font-medium border-none mb-4 mt-8">
         <a
-          href={`#${props.children.replace(/ /, '-').toLowerCase()}`}
+          href={`#${replacePathname(props.children)}`}
           {...props}
-          id={props.children.replace(/ /, '-').toLowerCase()}
+          id={replacePathname(props.children)}
         />
       </h2>
     );
