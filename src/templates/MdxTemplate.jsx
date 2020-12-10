@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import syntaxLightTheme from '../utils/syntaxHighlightingLightTheme';
 import syntaxDarkTheme from 'prism-react-renderer/themes/vsDark';
@@ -126,7 +127,9 @@ const components = {
 const MdxTemplate = ({ children }) => {
   return (
     <div className="w-3/5 bg-white px-8 py-2 dark:bg-gray-800 opacity-80">
-      <MDXProvider components={components}>{children}</MDXProvider>
+      <MDXProvider components={components}>
+        <MDXRenderer>{children}</MDXRenderer>
+      </MDXProvider>
     </div>
   );
 };

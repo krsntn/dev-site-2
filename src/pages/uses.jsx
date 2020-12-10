@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import MdxTemplate from '../templates/MdxTemplate';
-import UsesMdx from '../markdown-pages/uses/uses.md';
 import '../styles/bgImage.css';
 
 const Uses = (props) => {
@@ -11,11 +10,12 @@ const Uses = (props) => {
     graphql`
       query uses {
         mdx(frontmatter: { title: { eq: "Uses" } }) {
+          body
           frontmatter {
             title
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 1000) {
+                fluid(maxWidth: 2000) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -36,9 +36,7 @@ const Uses = (props) => {
         <Img fluid={featuredImgFluid} className="max-h-80 object-cover" />
       </div>
       <div className="py-10 flex justify-center ">
-        <MdxTemplate>
-          <UsesMdx />
-        </MdxTemplate>
+        <MdxTemplate>{post.data}</MdxTemplate>
       </div>
     </main>
   );

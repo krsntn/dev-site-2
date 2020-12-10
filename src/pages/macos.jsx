@@ -5,11 +5,11 @@ import Img from 'gatsby-image';
 import MdxTemplate from '../templates/MdxTemplate';
 import '../styles/bgImage.css';
 
-const VsCode = (props) => {
+const MacOS = (props) => {
   const data = useStaticQuery(
     graphql`
       query {
-        mdx(frontmatter: { title: { eq: "Vscode" } }) {
+        mdx(frontmatter: { title: { eq: "MacOS" } }) {
           body
           frontmatter {
             title
@@ -25,7 +25,6 @@ const VsCode = (props) => {
       }
     `
   );
-  console.log(data);
 
   let post = data.mdx;
   let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
@@ -43,4 +42,4 @@ const VsCode = (props) => {
   );
 };
 
-export default VsCode;
+export default MacOS;
