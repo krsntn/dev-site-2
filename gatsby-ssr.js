@@ -4,7 +4,7 @@ import { initialLoadTheme } from './src/utils/theme';
 const InitialSiteTheme = () => {
   const codeToRunOnClient = `
 (function() {
-  ${initialLoadTheme()}
+  ${initialLoadTheme}
 })()
   `;
 
