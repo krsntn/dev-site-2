@@ -36,7 +36,7 @@ const Uses = (props) => {
         <Img fluid={featuredImgFluid} className="max-h-80 object-cover" />
       </div>
       <div className="py-10 flex justify-center ">
-        <MdxTemplate>{post.data}</MdxTemplate>
+        <MdxTemplate>{post.body}</MdxTemplate>
       </div>
     </main>
   );
