@@ -29,6 +29,10 @@ const NightButton = (props) => {
 
   const moonImg = data.file.childImageSharp.fluid;
 
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
   return (
     <div className="absolute right-4 top-4">
       <label className="relative inline-block w-10 h-5">
