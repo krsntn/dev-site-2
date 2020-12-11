@@ -25,14 +25,13 @@ const VsCode = (props) => {
       }
     `
   );
-  console.log(data);
 
   let post = data.mdx;
   let featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid;
 
   return (
     <main className="relative min-h-screen bg-gray-100 text-black dark:bg-gray-700 dark:text-white bgImage">
-      <Helmet title="VS Code Configuration" />
+      <Helmet title={post.frontmatter.title} />
       <div>
         <Img fluid={featuredImgFluid} className="max-h-80 object-cover" />
       </div>

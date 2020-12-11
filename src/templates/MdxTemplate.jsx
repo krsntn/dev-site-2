@@ -70,7 +70,6 @@ const components = {
   },
   th: (props) => <th {...props} className="border border-collapse py-2 px-4" />,
   tr: (props, key) => {
-    console.log(props.children, key);
     let extraClass = '';
     if (tableRowIndex !== 1 && tableRowIndex % 2) {
       extraClass = 'bg-gray-100';

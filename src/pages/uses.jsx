@@ -31,7 +31,7 @@ const Uses = (props) => {
 
   return (
     <main className="relative min-h-screen bg-gray-100 text-black dark:bg-gray-700 dark:text-white bgImage">
-      <Helmet title="VS Code Configuration" />
+      <Helmet title={post.frontmatter.title} />
       <div>
         <Img fluid={featuredImgFluid} className="max-h-80 object-cover" />
       </div>
