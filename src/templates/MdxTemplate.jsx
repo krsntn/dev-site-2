@@ -93,6 +93,10 @@ const components = {
     const className = props.children.props.className || '';
     const matches = className.match(/language-(?<lang>.*)/);
 
+    if (typeof window === 'undefined') {
+      return false;
+    }
+
     return (
       <Highlight
         {...defaultProps}
