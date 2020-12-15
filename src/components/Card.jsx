@@ -5,7 +5,7 @@ const Card = (props) => {
   const { name, html_url, description, language } = data;
 
   return (
-    <div className="relative m-6 h-72 w-64 bg-gray-200 dark:bg-gray-800 rounded-lg text-base transform duration-200 hover:-translate-y-2">
+    <div className="relative m-3 h-72 w-60 bg-gray-200 dark:bg-gray-800 rounded-lg text-base transform duration-200 hover:-translate-y-2">
       <div
         className="rounded-t-lg bg-gray-300 dark:bg-gray-900 flex justify-start items-center"
         style={{ height: 20 }}

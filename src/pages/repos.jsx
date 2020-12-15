@@ -3,6 +3,7 @@ import { useQuery } from 'react-query';
 import Card from '../components/Card';
 import { getGithubRepos } from '../utils/api';
 import { Helmet } from 'react-helmet';
+import '../styles/repos.css';
 
 const ReposPage = () => {
   const {
@@ -15,10 +16,10 @@ const ReposPage = () => {
   } = useQuery('githubRepos', getGithubRepos, { refetchOnWindowFocus: false });
 
   return (
-    <main className="relative min-h-screen bg-gray-100 text-black dark:bg-gray-700 dark:text-white flex justify-center">
+    <main className="relative min-h-screen bg-gray-100 text-black dark:bg-gray-700 dark:text-white flex justify-center repos-bgImage">
       <Helmet title="Github Repositories" />
       {isSuccess && (
-        <div className="w-3/5 flex flex-wrap justify-center">
+        <div className="w-container flex flex-wrap justify-center">
           {data.map((repo, index) => (
             <Card key={index} data={repo} />
           ))}

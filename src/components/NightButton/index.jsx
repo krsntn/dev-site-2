@@ -46,10 +46,10 @@ const NightButton = (props) => {
           data-checked={isDarkMode}
         />
         <div
-          className="circle absolute inline-block rounded-full w-7 h-7 bg-gray-900 dark:bg-purple-700 top-0 left-0 transition-transform duration-500 cursor-pointer flex justify-center items-center"
+          className="circle absolute inline-block rounded-full w-7 h-7 bg-primary top-0 left-0 transition-transform duration-500 cursor-pointer flex justify-center items-center"
           data-checked={isDarkMode}
         >
-          <Img fluid={moonImg} className="w-3/6" />
+          <Img fluid={moonImg} className="w-3" />
         </div>
       </label>
     </div>

@@ -17,6 +17,9 @@ module.exports = {
         danger: '#e3342f',
         terminalgreen: '#0f0',
       },
+      width: {
+        container: '800px',
+      },
     },
   },
   variants: {

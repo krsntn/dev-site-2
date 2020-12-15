@@ -125,10 +125,12 @@ const components = {
 
 const MdxTemplate = ({ children }) => {
   return (
-    <div className="w-3/5 bg-white px-8 py-2 dark:bg-gray-800 opacity-80">
-      <MDXProvider components={components}>
-        <MDXRenderer>{children}</MDXRenderer>
-      </MDXProvider>
+    <div className="px-6 lg:w-container w-full ">
+      <div className="bg-white px-8 py-2 dark:bg-gray-800 opacity-80">
+        <MDXProvider components={components}>
+          <MDXRenderer>{children}</MDXRenderer>
+        </MDXProvider>
+      </div>
     </div>
   );
 };
