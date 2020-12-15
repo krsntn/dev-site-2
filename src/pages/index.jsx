@@ -32,7 +32,7 @@ const IndexPage = () => {
 
   return (
     <main className="min-h-screen bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
-      <Helmet title="Home Page" />
+      <Helmet title="Karson 🤘" />
       <NightButton />
       <section className="h-screen">
         <div className="h-4/6 flex flex-col justify-center items-center tracking-wider">

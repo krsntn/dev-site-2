@@ -31,7 +31,7 @@ const MacOS = (props) => {
 
   return (
     <main className="relative min-h-screen bg-gray-100 text-black dark:bg-gray-700 dark:text-white template-bgImage">
-      <Helmet title={post.frontmatter.title} />
+      <Helmet title={`Karson | ${post.frontmatter.title}`} />
       <div>
         <Img fluid={featuredImgFluid} className="max-h-80 object-cover" />
       </div>
