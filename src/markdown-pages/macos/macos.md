@@ -41,7 +41,7 @@ brew cask install alfred google-chrome firefox visual-studio-code \
 discord spotify qmoji fork the-unarchiver iterm2 \
 
 ###############################################################################
-# keyboard  #
+# keyboard                                                                    #
 ###############################################################################
 
 # Enable full keyboard access for all controls
