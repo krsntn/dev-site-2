@@ -23,7 +23,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      transform: ['active'],
+      translate: ['active'],
+    },
   },
   plugins: [],
 };

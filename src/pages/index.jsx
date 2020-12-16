@@ -12,7 +12,10 @@ const IndexPage = () => {
     graphql`
       query {
         allFile(
-          filter: { name: { regex: "/home*/" }, extension: { eq: "png" } }
+          filter: {
+            name: { regex: "/home|profile/" }
+            extension: { eq: "png" }
+          }
         ) {
           nodes {
             name
@@ -27,8 +30,11 @@ const IndexPage = () => {
     `
   );
 
-  const imageHome1 = imageQuery.allFile.nodes.find((x) => x.name === 'home1')
+  const imageHome = imageQuery.allFile.nodes.find((x) => x.name === 'home1')
     .childImageSharp.fluid;
+  const imageProfile = imageQuery.allFile.nodes.find(
+    (x) => x.name === 'profile'
+  ).childImageSharp.fluid;
 
   return (
     <main className="min-h-screen bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
@@ -42,13 +48,20 @@ const IndexPage = () => {
           <div className="text-xl font-extralight">
             I design and code beautifully simple things, and I love what I do.
           </div>
-          <div className="rounded-full bg-primary h-52 w-52 mt-12" />
+          <div className="relative rounded-full bg-primary h-48 w-48 mt-12">
+            <button
+              type="button"
+              className="rounded-full outline-none focus:outline-none transform duration-200 -translate-x-2 -translate-y-2 active:translate-x-0 active:translate-y-0"
+            >
+              <Img className="rounded-full h-48 w-48" fluid={imageProfile} />
+            </button>
+          </div>
         </div>
         <div
           className="absolute bottom-0 left-2/4 transform -translate-x-2/4"
           style={{ width: 600 }}
         >
-          <Img fluid={imageHome1} />
+          <Img fluid={imageHome} />
         </div>
       </section>
 
