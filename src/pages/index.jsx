@@ -40,33 +40,50 @@ const IndexPage = () => {
     <main className="min-h-screen bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
       <Helmet title="Karson 🤘" />
       <NightButton />
-      <section className="h-screen">
-        <div className="h-4/6 flex flex-col justify-center items-center tracking-wider">
-          <div className="text-5xl font-bold py-6">
+      <section className="relative h-screen px-12" style={{ minHeight: 800 }}>
+        <div
+          className="h-4/6 flex flex-col justify-center items-center tracking-wider"
+          style={{ minHeight: 600 }}
+        >
+          <div className="text-5xl text-center font-bold py-6">
             Front-end Dev, Designer, Ninja
           </div>
-          <div className="text-xl font-extralight">
+          <div className="text-xl text-center font-extralight">
             I design and code beautifully simple things, and I love what I do.
           </div>
-          <div className="relative rounded-full bg-primary h-48 w-48 mt-12">
+          <div
+            className="relative rounded-full bg-primary mt-12"
+            style={{
+              height: '50vw',
+              width: '50vw',
+              maxHeight: '10rem',
+              maxWidth: '10rem',
+            }}
+          >
             <button
               type="button"
               className="rounded-full outline-none focus:outline-none transform duration-200 -translate-x-2 -translate-y-2 active:translate-x-0 active:translate-y-0"
             >
-              <Img className="rounded-full h-48 w-48" fluid={imageProfile} />
+              <Img
+                className="rounded-full"
+                style={{
+                  height: '50vw',
+                  width: '50vw',
+                  maxHeight: '10rem',
+                  maxWidth: '10rem',
+                }}
+                fluid={imageProfile}
+              />
             </button>
           </div>
         </div>
-        <div
-          className="absolute bottom-0 left-2/4 transform -translate-x-2/4"
-          style={{ width: 600 }}
-        >
+        <div className="absolute bottom-0 w-full max-w-container md:w-container left-2/4 transform -translate-x-2/4 pointer-events-none">
           <Img fluid={imageHome} />
         </div>
       </section>
 
-      <section className="bg-primary text-white" style={{ height: 700 }}>
-        <div className="w-container m-auto pt-24 flex flex-col justify-center items-center tracking-wider text-center">
+      <section className="bg-primary text-white px-12 pt-16 pb-64">
+        <div className="w-full max-w-container m-auto flex flex-col justify-center items-center tracking-wider text-center">
           <div className="text-4xl font-bold py-6">
             Hi, I’m Karson. Nice to meet you.
           </div>
@@ -95,15 +112,15 @@ const IndexPage = () => {
         }}
       />
 
-      <section className="-mt-60 pb-16">
-        <div className="flex justify-center px-12">
+      <section className="-mt-60 px-12 pb-16">
+        <div className="flex justify-center">
           <div
-            className="min-h-96 w-container bg-white border border-gray-300 rounded-lg flex justify-center"
+            className="min-h-96 max-w-container bg-white border border-gray-300 rounded-lg flex justify-center flex-wrap"
             style={{
               boxShadow: '0 5px 5px 0 rgba(200, 200, 200, 0.5)',
             }}
           >
-            <div className="flex-1">
+            <div className="flex-1 min-w-full md:min-w-0">
               <Box
                 data={{
                   title: 'Front-end Dev',
@@ -129,7 +146,7 @@ const IndexPage = () => {
                 }}
               />
             </div>
-            <div className="flex-1 border border-t-0 border-b-0 border-r-0">
+            <div className="flex-1 min-w-full md:min-w-0 border md:border-t-0 border-b-0 border-r-0">
               <Box
                 data={{
                   title: 'Designer',
@@ -154,8 +171,8 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="min-h-screen">
-        <div className="w-container m-auto pt-20 flex flex-col justify-center items-center tracking-wider text-center">
+      <section className="min-h-screen px-12">
+        <div className="w-full max-w-container m-auto pt-20 flex flex-col justify-center items-center tracking-wider text-center">
           <div className="text-4xl font-bold py-6">Recent Works</div>
           <div className="text-lg font-extralight">
             Here are a few design projects I've worked on recently. Want to see

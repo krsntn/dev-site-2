@@ -18,7 +18,10 @@ module.exports = {
         terminalgreen: '#0f0',
       },
       width: {
-        container: '800px',
+        container: '768px',
+      },
+      maxWidth: {
+        container: '768px',
       },
     },
   },

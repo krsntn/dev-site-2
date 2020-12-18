@@ -10,7 +10,7 @@ const RecentWorkCard = (props) => {
   } = data;
 
   return (
-    <div className="relative m-3 h-72 w-60 bg-primary rounded-lg text-base">
+    <div className="relative m-3 h-72 w-56 bg-primary rounded-lg text-base">
       <div className="h-full p-6 flex flex justify-center items-center ">
         <div className="flex justify-center items-center font-medium text-white">
           {title}
