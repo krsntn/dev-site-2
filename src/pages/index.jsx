@@ -39,7 +39,6 @@ const IndexPage = () => {
   return (
     <main className="min-h-screen bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
       <Helmet title="Karson 🤘" />
-      <NightButton />
       <section className="relative h-screen px-12" style={{ minHeight: 800 }}>
         <div
           className="h-4/6 flex flex-col justify-center items-center tracking-wider"
@@ -211,6 +210,7 @@ const IndexPage = () => {
           </div>
         ))}
       </div> */}
+      <NightButton />
     </main>
   );
 };
