@@ -17,12 +17,12 @@ const Box = (props) => {
           {desc3.map((item, index) => (
             <ol key={index} className="py-0.5">
               {item === 'VS Code' && (
-                <Link to="/vscode" className="text-blue-500 underline">
+                <Link to="/vscode" className="text-primary hover:underline">
                   {item}
                 </Link>
               )}
               {item === 'macOS' && (
-                <Link to="/macos" className="text-blue-500 underline">
+                <Link to="/macos" className="text-primary hover:underline">
                   {item}
                 </Link>
               )}

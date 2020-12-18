@@ -47,7 +47,7 @@ const components = {
   a: (props) => (
     <a
       {...props}
-      className="font-medium text-blue-500 hover:underline cursor-pointer"
+      className="font-medium text-primary hover:underline cursor-pointer"
       style={{ display: 'inline' }}
     />
   ),

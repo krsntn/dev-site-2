@@ -160,7 +160,7 @@ const IndexPage = () => {
           <div className="text-lg font-extralight">
             Here are a few design projects I've worked on recently. Want to see
             more?{' '}
-            <Link to="/repos/" className="text-blue-500 underline">
+            <Link to="/repos/" className="text-primary hover:underline">
               /repos
             </Link>
             <RecentWorkCardList />
