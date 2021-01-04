@@ -18,8 +18,20 @@
     }
   },
   "rules": {
-    // eslint-plugin-react ---------------
+    // [START] eslint-plugin-react ---------------
+    "react/boolean-prop-naming": "warn",
+    "react/button-has-type": "warn",
     "react/prop-types": "off",
-    "react/self-closing-comp": "error"
+    "react/self-closing-comp": "error",
+    "react/no-unused-state": "warn",
+    "react/no-unsafe": ["error", { "checkAliases": true }],
+    "react/no-deprecated": "error",
+    "react/prefer-es6-class": ["error", "always"],
+    "react/sort-comp": "warn",
+    "react/jsx-no-target-blank": [
+      "warn",
+      { "allowReferrer": false, "enforceDynamicLinks": "always" }
+    ]
+    // [END] eslint-plugin-react ---------------
   }
 }
