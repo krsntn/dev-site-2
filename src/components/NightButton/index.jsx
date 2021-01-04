@@ -38,7 +38,7 @@ const NightButton = (props) => {
       <label className="relative inline-block w-10 h-5">
         <input
           type="checkbox"
-          className="w-0 h-0"
+          className="hidden w-0 h-0"
           onChange={() => setIsDarkMode((state) => !state)}
         />
         <span
