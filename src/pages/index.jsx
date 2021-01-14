@@ -45,7 +45,10 @@ const IndexPage = () => {
           style={{ minHeight: 600 }}
         >
           <div className="text-5xl text-center font-bold py-6">
-            Front-end Dev, Designer, Ninja
+            hey("karson");
+          </div>
+          <div className="text-3xl text-center font-bold py-6">
+            Front-end Dev, Open Source Enthusiast, Ninja
           </div>
           <div className="text-xl text-center font-extralight">
             I design and code beautifully simple things, and I love what I do.
@@ -91,13 +94,13 @@ const IndexPage = () => {
             illustrator. From Malaysia, based in KL. Previously, I worked at
             Singapore company as a full-stack Software Engineer, where I worked
             on delivering kick-ass campaigns and cutting edge web experiences.
-            Aside from work, I am also an open-source enthusiast and have
-            created projects that were listed in GitHub trending. My interests
-            lie in solving problems related to user experience. I'm quietly
-            confident, naturally curious, and perpetually working on improving
-            my chops one design problem at a time. I have several years of
-            experience as a front-end dev and currently working more onwards
-            with React and other hip frameworks.
+            Aside from work, I am also an open-source enthusiast and had
+            contributed to several projects that were listed in GitHub trending.
+            My interests lie in solving problems related to user experience. I'm
+            quietly confident, naturally curious, and perpetually working on
+            improving my chops one design problem at a time. I have several
+            years of experience as a front-end dev and currently focusing more
+            towards React related tech and other hip frameworks.
           </div>
         </div>
       </section>
