@@ -16,9 +16,12 @@ const RecentWorkCard = (props) => {
           {title}
         </div>
         <div className="h-full w-full bg-white dark:bg-black rounded-lg text-black dark:text-white flex flex-col justify-center items-center absolute opacity-0 transform duration-300 hover:opacity-100">
-          <div className="py-2">{description}</div>
+          <div className="py-2 px-4">{description}</div>
           <a href={href}>
-            <button className="my-4 p-2 px-3 w-full rounded bg-primary2 hover:bg-primary3 border-b-4 border-primary hover:border-primary2 text-white">
+            <button
+              type="button"
+              className="my-4 p-2 px-3 w-full rounded bg-primary2 hover:bg-primary3 border-b-4 border-primary hover:border-primary2 text-white"
+            >
               {text}
             </button>
           </a>
