@@ -6,14 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary0: '#BF2818',
-        primary: '#ff6347', // tomato
-        primary2: '#ff7961', // light tomato
-        primary3: '#ff837a', // light tomato
-        primary4: '#ffa493', // light tomato
-        primarymedium: '#ffb4a0', // medium tomato
-        primarydark: '#c53030', // dark tomato
-        secondary: '#ffed4a',
+        primary: '#e18241', // tomato
+        primary2: '#e48e54', // light tomato
+        primary3: '#e79b66', // light tomato
+        primary4: '#eaa77a', // light tomato
+        primarymedium: '#ca753a', // medium tomato
+        primarydark: '#b46834', // dark tomato
         danger: '#e3342f',
         terminalgreen: '#0f0',
       },
