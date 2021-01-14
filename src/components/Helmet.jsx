@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import favicon from '../images/favicon.ico';
 
 const meta = {
   title: 'Karson Tan 👨‍💻',
@@ -10,32 +11,32 @@ const meta = {
 
 const Metadata = () => {
   return (
-    <div>
-      <Helmet>
-        {/* <!-- HTML Meta Tags --> */}
-        <title>{meta.title}</title>
-        <meta name="title" content={meta.title} />
-        <meta name="description" content={meta.description} />
+    <Helmet>
+      <link rel="icon" type="image/png" href={favicon} />
 
-        {/* <!-- Google / Search Engine Tags --> */}
-        <meta itemprop="name" content={meta.title} />
-        <meta itemprop="description" content={meta.description} />
-        <meta itemprop="image" content={meta.image} />
+      {/* <!-- HTML Meta Tags --> */}
+      <title>{meta.title}</title>
+      <meta name="title" content={meta.title} />
+      <meta name="description" content={meta.description} />
 
-        {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content={meta.url} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={meta.image} />
+      {/* <!-- Google / Search Engine Tags --> */}
+      <meta itemprop="name" content={meta.title} />
+      <meta itemprop="description" content={meta.description} />
+      <meta itemprop="image" content={meta.image} />
 
-        {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <meta name="twitter:image" content={meta.image} />
-      </Helmet>
-    </div>
+      {/* <!-- Facebook Meta Tags --> */}
+      <meta property="og:url" content={meta.url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:image" content={meta.image} />
+
+      {/* <!-- Twitter Meta Tags --> */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={meta.title} />
+      <meta name="twitter:description" content={meta.description} />
+      <meta name="twitter:image" content={meta.image} />
+    </Helmet>
   );
 };
 
