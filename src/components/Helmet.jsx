@@ -4,7 +4,8 @@ import favicon from '../images/favicon.ico';
 
 const meta = {
   title: 'Karson Tan 👨‍💻',
-  description: `Front End Dev, Sport Enthusiast & Occasional Graphic Designer making the web a little better place and trying to earn a living. 🤟🎊🎉`,
+  googleTitle: 'Karson Tan | Dev',
+  description: `Front End Dev, Sport Enthusiast & Occasional Graphic Designer making the web a little better place while trying to earn a living. 🤟`,
   url: 'https://dev.krsn.xyz',
   image: 'https://i.imgur.com/VHo6qz0.jpg',
 };
@@ -20,7 +21,7 @@ const Metadata = () => {
       <meta name="description" content={meta.description} />
 
       {/* <!-- Google / Search Engine Tags --> */}
-      <meta itemprop="name" content={meta.title} />
+      <meta itemprop="name" content={meta.googleTitle} />
       <meta itemprop="description" content={meta.description} />
       <meta itemprop="image" content={meta.image} />
 
