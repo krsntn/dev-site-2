@@ -62,7 +62,7 @@ const IndexPage = () => {
       >
         <Img
           fluid={skyImage}
-          className="bottom-0 left-0 w-full h-screen"
+          className="top-0 left-0 w-full h-full"
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'cover',
@@ -71,7 +71,7 @@ const IndexPage = () => {
         />
         <Img
           fluid={mountain3}
-          className="bottom-0 left-0 w-full h-screen hidden md:block mountain3"
+          className="bottom-0 left-0 w-full h-full hidden md:block mountain3"
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'contain',
@@ -80,7 +80,7 @@ const IndexPage = () => {
         />
         <Img
           fluid={mountain2}
-          className="bottom-0 left-0 w-full h-screen hidden md:block mountain2"
+          className="bottom-0 left-0 w-full h-full hidden md:block mountain2"
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'contain',
@@ -127,7 +127,7 @@ const IndexPage = () => {
         </div>
         <Img
           fluid={mountain1}
-          className="bottom-0 left-0 w-full h-screen hidden md:block mountain1"
+          className="bottom-0 left-0 w-full h-full hidden md:block mountain1"
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'contain',
