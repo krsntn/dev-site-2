@@ -16,7 +16,7 @@ const IndexPage = () => {
           nodes {
             name
             childImageSharp {
-              fluid(maxWidth: 2000, quality: 100) {
+              fluid {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -71,7 +71,7 @@ const IndexPage = () => {
         />
         <Img
           fluid={mountain3}
-          className="bottom-0 left-0 w-full h-screen mountain3"
+          className="bottom-0 left-0 w-full h-screen hidden md:block mountain3"
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'contain',
@@ -80,7 +80,7 @@ const IndexPage = () => {
         />
         <Img
           fluid={mountain2}
-          className="bottom-0 left-0 w-full h-screen mountain2"
+          className="bottom-0 left-0 w-full h-screen hidden md:block mountain2"
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'contain',
@@ -89,19 +89,19 @@ const IndexPage = () => {
             left: '-10%',
           }}
         />
-        <div className="absolute left-0 bottom-0 w-full bg-gradient-to-b from-white dark:from-black to-primary h-3 black-shadow" />
+        <div className="absolute left-0 bottom-0 w-full bg-gradient-to-b from-white dark:from-black to-primary h-3 hidden md:block black-shadow" />
 
         <div
           className="absolute left-0 right-0 h-4/6 flex flex-col justify-center items-center tracking-wider"
           style={{ minHeight: 600 }}
         >
-          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-5xl text-center font-bold p-6 my-2 text-gray-700 dark:text-gray-300">
+          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-2xl md:text-5xl text-center font-bold p-6 m-2 text-gray-700 dark:text-gray-300">
             hey("karson");
           </div>
-          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-3xl text-center font-bold p-4 my-2 text-gray-700 dark:text-gray-300">
+          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-1xl md:text-3xl text-center font-bold p-4 m-2 text-gray-700 dark:text-gray-300">
             Front-end Dev, Open Source Enthusiast, Ninja
           </div>
-          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-xl text-center font-extralight p-4 my-2 text-gray-700 dark:text-gray-300">
+          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-l md:text-xl text-center font-extralight p-4 m-2 text-gray-700 dark:text-gray-300">
             I design and code beautifully simple things, and I love what I do.
           </div>
           <div
@@ -127,7 +127,7 @@ const IndexPage = () => {
         </div>
         <Img
           fluid={mountain1}
-          className="bottom-0 left-0 w-full h-screen mountain1"
+          className="bottom-0 left-0 w-full h-screen hidden md:block mountain1"
           style={{ position: 'absolute' }}
           imgStyle={{
             objectFit: 'contain',
