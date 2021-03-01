@@ -1,10 +1,28 @@
 [
   {
+    "title": "Chrome Extension",
+    "description": "Customize your own speed control hotkeys in Youtube",
+    "icons": ["fab_react", "fab_js", "fab_css3-alt", "fab_google"],
+    "link": {
+      "href": "https://chrome.google.com/webstore/detail/youtube-speed-control-hot/opcjoeippmphadnkmkjocmingcbpmepn",
+      "text": "Chrome Web Store"
+    }
+  },
+  {
     "title": "QR Code Generator",
     "description": "A minimalist website to generate QR code",
     "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
     "link": {
       "href": "https://qrcode.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
+    "title": "Typing Test",
+    "description": "Test your typing speed",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://types.krsn.xyz/",
       "text": "Visit Site"
     }
   },
@@ -54,21 +72,21 @@
     }
   },
   {
+    "title": "Nextjs Demo Site",
+    "description": "A Sample site to test/demo Nextjs",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://nextjs.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
     "title": "Bottom Scroller",
     "description": "A bookmarklet to scroll to the bottom of a webpage",
     "icons": ["fab_js", "fab_css3-alt", "fas_globe-asia"],
     "link": {
       "href": "https://bottom-scroller.krsn.xyz",
       "text": "Visit Site"
-    }
-  },
-  {
-    "title": "Chrome Extension",
-    "description": "Customize your own speed control hotkeys in Youtube",
-    "icons": ["fab_react", "fab_js", "fab_css3-alt", "fab_google"],
-    "link": {
-      "href": "https://chrome.google.com/webstore/detail/youtube-speed-control-hot/opcjoeippmphadnkmkjocmingcbpmepn",
-      "text": "Chrome Web Store"
     }
   },
   {
