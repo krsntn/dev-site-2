@@ -30,6 +30,7 @@
     "gatsby-remark-images": "^3.7.1",
     "gatsby-source-filesystem": "^2.7.0",
     "gatsby-transformer-sharp": "^2.8.0",
+    "gsap": "^3.6.0",
     "postcss": "^7.0.35",
     "prism-react-renderer": "^1.1.1",
     "react": "^16.14.0",

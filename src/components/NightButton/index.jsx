@@ -5,11 +5,12 @@ import { setNewTheme, isCurrentDarkTheme } from '../../utils/theme';
 import './nightButton.css';
 
 const NightButton = (props) => {
-  const [isDarkMode, setIsDarkMode] = useState(isCurrentDarkTheme);
+  const [isDarkMode, setIsDarkMode] = useState(() => isCurrentDarkTheme());
 
   useEffect(() => {
     if (isCurrentDarkTheme() !== isDarkMode)
       setNewTheme(isDarkMode ? 'dark' : 'light');
+    props.onToggle();
   }, [isDarkMode]);
 
   const data = useStaticQuery(
@@ -42,7 +43,7 @@ const NightButton = (props) => {
           onChange={() => setIsDarkMode((state) => !state)}
         />
         <span
-          className="slider absolute rounded-full top-0 bottom-0 left-0 right-0 border-4 border-gray-300 dark:border-gray-800 cursor-pointer"
+          className="slider absolute rounded-full top-0 bottom-0 left-0 right-0 border-4 border-gray-200 cursor-pointer"
           data-checked={isDarkMode}
         />
         <div

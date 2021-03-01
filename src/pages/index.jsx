@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Helmet from '../components/Helmet';
@@ -6,21 +6,17 @@ import NightButton from '../components/NightButton';
 import '../styles/index.css';
 import Box from '../components/Box';
 import RecentWorkCardList from '../components/RecentWorkCardList';
+import { isCurrentDarkTheme } from '../utils/theme';
 
 const IndexPage = () => {
   const imageQuery = useStaticQuery(
     graphql`
       query {
-        allFile(
-          filter: {
-            name: { regex: "/home|profile/" }
-            extension: { eq: "png" }
-          }
-        ) {
+        allFile(filter: { extension: { regex: "/png|jpg/" } }) {
           nodes {
             name
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 2000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -30,27 +26,82 @@ const IndexPage = () => {
     `
   );
 
-  const imageHome = imageQuery.allFile.nodes.find((x) => x.name === 'home1')
-    .childImageSharp.fluid;
   const imageProfile = imageQuery.allFile.nodes.find(
     (x) => x.name === 'profile'
   ).childImageSharp.fluid;
 
+  const mountain1 = imageQuery.allFile.nodes.find((x) => x.name === 'mountain1')
+    .childImageSharp.fluid;
+  const mountain2 = imageQuery.allFile.nodes.find((x) => x.name === 'mountain2')
+    .childImageSharp.fluid;
+  const mountain3 = imageQuery.allFile.nodes.find((x) => x.name === 'mountain3')
+    .childImageSharp.fluid;
+  const sky = imageQuery.allFile.nodes.find((x) => x.name === 'sky')
+    .childImageSharp.fluid;
+  const nightsky = imageQuery.allFile.nodes.find((x) => x.name === 'nightsky')
+    .childImageSharp.fluid;
+
+  const [skyImage, setSkyImage] = useState(() =>
+    isCurrentDarkTheme() ? nightsky : sky
+  );
+
+  useEffect(() => {
+    require('../utils/scrollTrigger');
+  }, []);
+
+  function onNightButtonToggle() {
+    setSkyImage(isCurrentDarkTheme() ? nightsky : sky);
+  }
+
   return (
     <main className="min-h-screen bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
       <Helmet />
-      <section className="relative h-screen px-12" style={{ minHeight: 800 }}>
+      <section
+        className="relative w-full h-screen px-12"
+        style={{ minHeight: 800 }}
+      >
+        <Img
+          fluid={skyImage}
+          className="bottom-0 left-0 w-full h-screen"
+          style={{ position: 'absolute' }}
+          imgStyle={{
+            objectFit: 'cover',
+            objectPosition: 'top',
+          }}
+        />
+        <Img
+          fluid={mountain3}
+          className="bottom-0 left-0 w-full h-screen mountain3"
+          style={{ position: 'absolute' }}
+          imgStyle={{
+            objectFit: 'contain',
+            objectPosition: 'bottom center',
+          }}
+        />
+        <Img
+          fluid={mountain2}
+          className="bottom-0 left-0 w-full h-screen mountain2"
+          style={{ position: 'absolute' }}
+          imgStyle={{
+            objectFit: 'contain',
+            objectPosition: 'bottom center',
+            top: '100px',
+            left: '-10%',
+          }}
+        />
+        <div className="absolute left-0 bottom-0 w-full bg-gradient-to-b from-white dark:from-black to-primary h-3 black-shadow" />
+
         <div
-          className="h-4/6 flex flex-col justify-center items-center tracking-wider"
+          className="absolute left-0 right-0 h-4/6 flex flex-col justify-center items-center tracking-wider"
           style={{ minHeight: 600 }}
         >
-          <div className="text-5xl text-center font-bold py-6">
+          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-5xl text-center font-bold p-6 my-2 text-gray-700 dark:text-gray-300">
             hey("karson");
           </div>
-          <div className="text-3xl text-center font-bold py-6">
+          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-3xl text-center font-bold p-4 my-2 text-gray-700 dark:text-gray-300">
             Front-end Dev, Open Source Enthusiast, Ninja
           </div>
-          <div className="text-xl text-center font-extralight">
+          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-xl text-center font-extralight p-4 my-2 text-gray-700 dark:text-gray-300">
             I design and code beautifully simple things, and I love what I do.
           </div>
           <div
@@ -62,34 +113,35 @@ const IndexPage = () => {
               maxWidth: '10rem',
             }}
           >
-            <button
-              type="button"
-              className="rounded-full outline-none focus:outline-none transform duration-200 -translate-x-2 -translate-y-2 active:translate-x-0 active:translate-y-0"
-            >
-              <Img
-                className="rounded-full"
-                style={{
-                  height: '50vw',
-                  width: '50vw',
-                  maxHeight: '10rem',
-                  maxWidth: '10rem',
-                }}
-                fluid={imageProfile}
-              />
-            </button>
+            <Img
+              className="rounded-full"
+              style={{
+                height: '50vw',
+                width: '50vw',
+                maxHeight: '10rem',
+                maxWidth: '10rem',
+              }}
+              fluid={imageProfile}
+            />
           </div>
         </div>
-        <div className="absolute bottom-0 w-full max-w-container md:w-container left-2/4 transform -translate-x-2/4 pointer-events-none">
-          <Img fluid={imageHome} />
-        </div>
+        <Img
+          fluid={mountain1}
+          className="bottom-0 left-0 w-full h-screen mountain1"
+          style={{ position: 'absolute' }}
+          imgStyle={{
+            objectFit: 'contain',
+            objectPosition: 'bottom center',
+          }}
+        />
       </section>
 
       <section className="bg-primary text-white px-12 pt-16 pb-64">
         <div className="w-full max-w-container m-auto flex flex-col justify-center items-center tracking-wider text-center">
-          <div className="text-4xl font-bold py-6">
+          <div className="text-4xl font-bold py-6 about-title">
             Hi, I’m Karson. Nice to meet you.
           </div>
-          <div className="text-lg font-extralight">
+          <div className="text-lg font-extralight about-desc">
             I am a creative frontend developer, occasionally designer and
             illustrator. From Malaysia, based in KL. Previously, I worked at
             Singapore company as a full-stack Software Engineer, where I worked
@@ -186,34 +238,7 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
-      {/* <div>krsn&apos;s dev-site@mac</div>
-
-      <div className="mt-10">few years experience in front end development</div>
-
-      <div className="mt-10">
-        {data.map((item, index) => (
-          <div key={index}>
-            <div className="w-36 inline-block">
-              {'-->'}{' '}
-              {item.type === 'external' ? (
-                <a className="textShadow" href={item.url}>
-                  {item.name}
-                </a>
-              ) : (
-                <Link className="textShadow" to={item.url}>
-                  {item.name}
-                </Link>
-              )}
-            </div>
-            <div className="inline-block">
-              <span className="text-gray-400">
-                ----- {item.description} -----
-              </span>
-            </div>
-          </div>
-        ))}
-      </div> */}
-      <NightButton />
+      <NightButton onToggle={onNightButtonToggle} />
     </main>
   );
 };
