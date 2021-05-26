@@ -2,7 +2,8 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import syntaxLightTheme from '../utils/syntaxHighlightingLightTheme';
+// import syntaxLightTheme from '../utils/syntaxHighlightingLightTheme';
+import syntaxLightTheme from 'prism-react-renderer/themes/github';
 import syntaxDarkTheme from 'prism-react-renderer/themes/vsDark';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import { isCurrentDarkTheme } from '../utils/theme';
@@ -47,7 +48,7 @@ const components = {
   a: (props) => (
     <a
       {...props}
-      className="font-medium text-primary hover:underline cursor-pointer"
+      className="font-medium text-gray-700 dark:text-white underline cursor-pointer"
       style={{ display: 'inline' }}
     />
   ),

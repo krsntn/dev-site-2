@@ -7,6 +7,13 @@ import '../styles/index.css';
 import Box from '../components/Box';
 import RecentWorkCardList from '../components/RecentWorkCardList';
 import { isCurrentDarkTheme } from '../utils/theme';
+import data from '../data/external-link.json';
+
+const sectionClasses =
+  'w-full md:max-w-container_sm max-w-container_md min-h-screen m-auto py-16';
+
+const floatClasses =
+  'hidden lg:block fixed w-full max-w-container_lg left-2/4 px-10 transform -translate-x-1/2';
 
 const IndexPage = () => {
   const imageQuery = useStaticQuery(
@@ -54,94 +61,59 @@ const IndexPage = () => {
   }
 
   return (
-    <main className="min-h-screen bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
+    <main>
       <Helmet />
-      <section
-        className="relative w-full h-screen px-12"
-        style={{ minHeight: 800 }}
-      >
-        <Img
-          fluid={skyImage}
-          className="top-0 left-0 w-full h-full"
-          style={{ position: 'absolute' }}
-          imgStyle={{
-            objectFit: 'cover',
-            objectPosition: 'top',
-          }}
-        />
-        <Img
-          fluid={mountain3}
-          className="bottom-0 left-0 w-full h-full hidden md:block mountain3"
-          style={{ position: 'absolute' }}
-          imgStyle={{
-            objectFit: 'contain',
-            objectPosition: 'bottom center',
-          }}
-        />
-        <Img
-          fluid={mountain2}
-          className="bottom-0 left-0 w-full h-full hidden md:block mountain2"
-          style={{ position: 'absolute' }}
-          imgStyle={{
-            objectFit: 'contain',
-            objectPosition: 'bottom center',
-            top: '100px',
-            left: '-10%',
-          }}
-        />
-        <div className="absolute left-0 bottom-0 w-full bg-gradient-to-b from-white dark:from-black to-primary h-3 hidden md:block black-shadow" />
+      <div className={`${floatClasses} top-0`}>
+        <div className="py-6 text-2xl font-semibold">karson</div>
+      </div>
 
-        <div
-          className="absolute left-0 right-0 h-4/6 flex flex-col justify-center items-center tracking-wider"
-          style={{ minHeight: 600 }}
-        >
-          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-2xl md:text-5xl text-center font-bold p-6 m-2 text-gray-700 dark:text-gray-300">
-            hey("karson");
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-1xl md:text-3xl text-center font-bold p-4 m-2 text-gray-700 dark:text-gray-300">
-            Front-end Dev, Open Source Enthusiast, Ninja
-          </div>
-          <div className="bg-gray-100 dark:bg-gray-600 bg-opacity-50 rounded-lg text-l md:text-xl text-center font-extralight p-4 m-2 text-gray-700 dark:text-gray-300">
-            I design and code beautifully simple things, and I love what I do.
-          </div>
-          <div
-            className="relative rounded-full bg-primary mt-12"
-            style={{
-              height: '50vw',
-              width: '50vw',
-              maxHeight: '10rem',
-              maxWidth: '10rem',
-            }}
-          >
-            <Img
-              className="rounded-full"
-              style={{
-                height: '50vw',
-                width: '50vw',
-                maxHeight: '10rem',
-                maxWidth: '10rem',
-              }}
-              fluid={imageProfile}
-            />
-          </div>
+      <div className={`${floatClasses} bottom-0`}>
+        <div className="text-center flex flex-col items-end mb-10">
+          {data.map((item, index) => (
+            <a href={item.url} key={index}>
+              <button
+                type="button"
+                className="my-2 p-2 rounded bg-gray-700 hover:bg-gray-900 text-white"
+              >
+                {item.name}
+              </button>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <section
+        className={`${sectionClasses} text-center flex flex-col justify-center items-center`}
+      >
+        <div className="hi rounded-lg text-6xl md:text-8xl font-black p-6 m-2">
+          Hello World.
+        </div>
+        <div className="rounded-lg text-3xl md:text-6xl font-semibold p-4 m-2">
+          Front-end Dev, Open Source Enthusiast, Ninja
+        </div>
+        <div className="rounded-lg text-2xl md:text-5xl font-extralight p-4 m-2">
+          I design and code beautifully simple things, and I love what I do.
         </div>
         <Img
-          fluid={mountain1}
-          className="bottom-0 left-0 w-full h-full hidden md:block mountain1"
-          style={{ position: 'absolute' }}
-          imgStyle={{
-            objectFit: 'contain',
-            objectPosition: 'bottom center',
+          className="profile-image relative rounded-full my-12"
+          style={{
+            height: '50vw',
+            width: '50vw',
+            maxHeight: '10rem',
+            maxWidth: '10rem',
           }}
+          fluid={imageProfile}
         />
       </section>
 
-      <section className="bg-primary text-white px-12 pt-16 pb-64">
-        <div className="w-full max-w-container m-auto flex flex-col justify-center items-center tracking-wider text-center">
-          <div className="text-4xl font-bold py-6 about-title">
-            Hi, I’m Karson. Nice to meet you.
+      <section className={`${sectionClasses} grid grid-cols-6`}>
+        <div className="col-start-1 col-end-7">
+          <div className="text-8xl py-6 text-left about-title">
+            More about me...
           </div>
-          <div className="text-lg font-extralight about-desc">
+        </div>
+        <div className="col-start-2 col-end-7">
+          <div className="about-desc text-4xl font-extralight leading-normal text-right">
             I am a creative frontend developer, occasionally designer and
             illustrator. From Malaysia, based in KL. Previously, I worked at
             Singapore company as a full-stack Software Engineer, where I worked
@@ -157,16 +129,16 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <div
+      {/* <div
         className="bg-primary"
         style={{
           height: 50,
           borderBottomLeftRadius: '50%',
           borderBottomRightRadius: '50%',
         }}
-      />
+      /> */}
 
-      <section className="-mt-60 px-12 pb-16">
+      <section className={`${sectionClasses}`}>
         <div className="flex justify-center">
           <div
             className="min-h-96 max-w-container bg-white border border-gray-300 rounded-lg flex justify-center flex-wrap"
@@ -225,20 +197,23 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section className="min-h-screen px-12">
-        <div className="w-full max-w-container m-auto pt-20 flex flex-col justify-center items-center tracking-wider text-center">
-          <div className="text-4xl font-bold py-6">Recent Works</div>
-          <div className="text-lg font-extralight">
+      <section className={`${sectionClasses}`}>
+        <div className="w-full flex flex-col justify-center items-center tracking-wider text-center">
+          <div className="recent-work text-8xl py-6">Recent Work...</div>
+          <div className="text-2xl font-extralight">
             Here are a few design projects I've worked on recently. Want to see
             more?{' '}
-            <Link to="/repos/" className="text-primary hover:underline">
+            <Link
+              to="/repos/"
+              className="text-gray-700 dark:text-white font-medium underline"
+            >
               /repos
             </Link>
             <RecentWorkCardList />
           </div>
         </div>
       </section>
-      <NightButton onToggle={onNightButtonToggle} />
+      {/* <NightButton onToggle={onNightButtonToggle} /> */}
     </main>
   );
 };

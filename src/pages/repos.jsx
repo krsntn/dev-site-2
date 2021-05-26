@@ -19,7 +19,7 @@ const ReposPage = () => {
     <main className="relative min-h-screen bg-gray-100 text-black dark:bg-gray-700 dark:text-white flex justify-center repos-bgImage">
       <Helmet title="Karson | Repos" />
       {isSuccess && (
-        <div className="w-container flex flex-wrap justify-center">
+        <div className="w-full max-w-container_lg flex flex-wrap justify-center">
           {data.map((repo, index) => (
             <Card key={index} data={repo} />
           ))}

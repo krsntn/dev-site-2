@@ -4,7 +4,7 @@ import RecentWorkCard from './RecentWorkCard';
 
 const RecentWorkCardList = (props) => {
   return (
-    <div className="py-10 flex flex-wrap justify-around">
+    <div className="py-10 m-auto flex flex-wrap justify-center">
       {data.map((item, index) => (
         <RecentWorkCard key={index} data={item} />
       ))}

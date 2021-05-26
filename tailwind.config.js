@@ -18,8 +18,17 @@ module.exports = {
       width: {
         container: '768px',
       },
+      minWidth: {
+        container_sm: '640px',
+        container_md: '768px',
+        container_lg: '1024px',
+        container_xl: '1280px',
+      },
       maxWidth: {
-        container: '768px',
+        container_sm: '767px',
+        container_md: '1023px',
+        container_lg: '1279px',
+        container_xl: '1535px',
       },
     },
   },

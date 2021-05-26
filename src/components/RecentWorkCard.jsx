@@ -10,7 +10,7 @@ const RecentWorkCard = (props) => {
   } = data;
 
   return (
-    <div className="relative m-3 h-72 w-56 bg-primary rounded-lg text-base">
+    <div className="relative m-3 h-72 w-56 bg-gray-700 rounded-lg text-base">
       <div className="h-full p-6 flex flex justify-center items-center ">
         <div className="flex justify-center items-center font-medium text-white">
           {title}
@@ -20,7 +20,7 @@ const RecentWorkCard = (props) => {
           <a href={href}>
             <button
               type="button"
-              className="my-4 p-2 px-3 w-full rounded bg-primary2 hover:bg-primary3 border-b-4 border-primary hover:border-primary2 text-white"
+              className="my-4 p-2 px-3 w-full rounded bg-green-500 hover:bg-green-600 text-white"
             >
               {text}
             </button>
