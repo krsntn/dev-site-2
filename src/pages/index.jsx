@@ -70,12 +70,9 @@ const IndexPage = () => {
       <div className={`${floatClasses} bottom-0`}>
         <div className="text-center flex flex-col items-end mb-10">
           {data.map((item, index) => (
-            <a href={item.url} key={index}>
-              <button
-                type="button"
-                className="my-2 p-2 rounded bg-gray-700 hover:bg-gray-900 text-white"
-              >
-                {item.name}
+            <a href={item.url} key={index} className="my-2">
+              <button type="button" className="p-2 rounded external-button">
+                <span>{item.name}</span>
               </button>
             </a>
           ))}
