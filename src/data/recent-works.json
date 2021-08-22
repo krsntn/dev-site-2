@@ -18,6 +18,15 @@
     }
   },
   {
+    "title": "Electricity Bill Calculator",
+    "description": "Forecast your electricity bill",
+    "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
+    "link": {
+      "href": "https://electricity-bill.krsn.xyz/",
+      "text": "Visit Site"
+    }
+  },
+  {
     "title": "Typing Test",
     "description": "Test your typing speed",
     "icons": ["fab_react", "fab_sass", "fas_globe-asia"],
