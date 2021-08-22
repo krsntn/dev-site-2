@@ -13,9 +13,6 @@ const GlobalLayout = ({ children }) => {
     <React.Fragment>
       <div className="bg-gray-100 text-gray-700 dark:text-gray-300 px-8 dark:bg-gray-800 dark:text-white">
         {children}
-        <div className="text-xs font-base text-center py-10">
-          © 2020. Crafted by <span className="font-bold">KT</span>
-        </div>
       </div>
       {/* {showFooter && <Footer />} */}
       {/* <Footer /> */}

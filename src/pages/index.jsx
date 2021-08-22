@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Helmet from '../components/Helmet';
-import NightButton from '../components/NightButton';
-import '../styles/index.css';
 import Box from '../components/Box';
 import RecentWorkCardList from '../components/RecentWorkCardList';
 import { isCurrentDarkTheme } from '../utils/theme';
 import data from '../data/external-link.json';
+import waveDark from '../images/waves_dark.svg';
+import waveLight from '../images/waves_light.svg';
+import '../styles/index.css';
 
 const sectionClasses =
   'w-full md:max-w-container_sm max-w-container_md min-h-screen m-auto py-16';
@@ -19,7 +20,7 @@ const IndexPage = () => {
   const imageQuery = useStaticQuery(
     graphql`
       query {
-        allFile(filter: { extension: { regex: "/png|jpg/" } }) {
+        allFile(filter: { extension: { regex: "/png|jpg|svg/" } }) {
           nodes {
             name
             childImageSharp {
@@ -37,28 +38,11 @@ const IndexPage = () => {
     (x) => x.name === 'profile'
   ).childImageSharp.fluid;
 
-  const mountain1 = imageQuery.allFile.nodes.find((x) => x.name === 'mountain1')
-    .childImageSharp.fluid;
-  const mountain2 = imageQuery.allFile.nodes.find((x) => x.name === 'mountain2')
-    .childImageSharp.fluid;
-  const mountain3 = imageQuery.allFile.nodes.find((x) => x.name === 'mountain3')
-    .childImageSharp.fluid;
-  const sky = imageQuery.allFile.nodes.find((x) => x.name === 'sky')
-    .childImageSharp.fluid;
-  const nightsky = imageQuery.allFile.nodes.find((x) => x.name === 'nightsky')
-    .childImageSharp.fluid;
-
-  const [skyImage, setSkyImage] = useState(() =>
-    isCurrentDarkTheme() ? nightsky : sky
-  );
+  const waveSvg = isCurrentDarkTheme() ? waveDark : waveLight;
 
   useEffect(() => {
     require('../utils/scrollTrigger');
   }, []);
-
-  function onNightButtonToggle() {
-    setSkyImage(isCurrentDarkTheme() ? nightsky : sky);
-  }
 
   return (
     <main>
@@ -82,27 +66,39 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <section
-        className={`${sectionClasses} text-center flex flex-col justify-center items-center`}
-      >
-        <div className="hi rounded-lg text-6xl md:text-8xl font-black p-6 m-2">
-          Hello World.
+      <section className="bg-gray-200 dark:bg-gray-700">
+        <div
+          className={`${sectionClasses} pb-0 text-center flex flex-col justify-center items-center`}
+        >
+          <div className="hi rounded-lg text-6xl md:text-8xl font-black p-6 m-2">
+            Hello World.
+          </div>
+          <div className="rounded-lg text-3xl md:text-6xl font-semibold p-4 m-2">
+            Front-end Dev, Open Source Enthusiast, Ninja
+          </div>
+          <div className="rounded-lg text-2xl md:text-5xl font-extralight p-4 m-2">
+            I design and code beautifully simple things, and I love what I do.
+          </div>
+          <Img
+            className="profile-image relative rounded-full my-12"
+            style={{
+              height: '50vw',
+              width: '50vw',
+              maxHeight: '10rem',
+              maxWidth: '10rem',
+            }}
+            fluid={imageProfile}
+          />
         </div>
-        <div className="rounded-lg text-3xl md:text-6xl font-semibold p-4 m-2">
-          Front-end Dev, Open Source Enthusiast, Ninja
-        </div>
-        <div className="rounded-lg text-2xl md:text-5xl font-extralight p-4 m-2">
-          I design and code beautifully simple things, and I love what I do.
-        </div>
-        <Img
-          className="profile-image relative rounded-full my-12"
+
+        <div
           style={{
-            height: '50vw',
-            width: '50vw',
-            maxHeight: '10rem',
-            maxWidth: '10rem',
+            backgroundImage: `url(${waveSvg})`,
+            backgroundRepeat: 'none',
+            backgroundSize: 'cover',
+            aspectRatio: '16/9',
+            width: '100%',
           }}
-          fluid={imageProfile}
         />
       </section>
 
@@ -213,7 +209,6 @@ const IndexPage = () => {
           </div>
         </div>
       </section>
-      {/* <NightButton onToggle={onNightButtonToggle} /> */}
     </main>
   );
 };
