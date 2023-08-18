@@ -107,17 +107,15 @@ const IndexPage = () => {
         </div>
         <div className="col-start-2 col-end-7">
           <div className="about-desc text-4xl font-extralight leading-normal text-right">
-            I am a creative frontend developer, occasionally designer and
-            illustrator. From Malaysia, based in KL. Previously, I worked at
-            Singapore company as a full-stack Software Engineer, where I worked
-            on delivering kick-ass campaigns and cutting edge web experiences.
-            Aside from work, I am also an open-source enthusiast and had
-            contributed to several projects that were listed in GitHub trending.
-            My interests lie in solving problems related to user experience. I'm
-            quietly confident, naturally curious, and perpetually working on
-            improving my chops one design problem at a time. I have several
-            years of experience as a front-end dev and currently focusing more
-            towards React related tech and other hip frameworks.
+            I'm a creative frontend whiz who also dabbles in design and
+            illustration, hailing from 🇲🇾 and chilling in KL. I used to do the
+            full-stack gig at a cool company in 🇸🇬, where I cooked up awesome
+            campaigns and served up some seriously slick web experiences. When
+            I'm not doing that, you'll find me spreading the open-source love
+            and making my mark on trendy GitHub projects. I'm all about nailing
+            user experience hiccups and I've got the skills to back it up. I'm
+            that chill, curious type who's always leveling up my design game,
+            especially diving into React and other groovy frameworks. 😉
           </div>
         </div>
       </section>
