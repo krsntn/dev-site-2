@@ -8,6 +8,7 @@ import { isCurrentDarkTheme } from '../utils/theme';
 import data from '../data/external-link.json';
 import waveDark from '../images/waves_dark.svg';
 import waveLight from '../images/waves_light.svg';
+import imageProfile from '../images/profile.png';
 import '../styles/index.css';
 
 const sectionClasses =
@@ -34,10 +35,6 @@ const IndexPage = () => {
     `
   );
 
-  const imageProfile = imageQuery.allFile.nodes.find(
-    (x) => x.name === 'profile'
-  ).childImageSharp.fluid;
-
   const waveSvg = isCurrentDarkTheme() ? waveDark : waveLight;
 
   useEffect(() => {
@@ -48,7 +45,10 @@ const IndexPage = () => {
     <main>
       <Helmet />
       <div className={`${floatClasses} top-0`}>
-        <div className="py-6 text-2xl font-semibold">karson</div>
+        <div className="py-6 text-2xl font-semibold flex gap-2 items-center">
+          <img src={imageProfile} className="rounded-md h-7 w-7 m-0" />
+          karson
+        </div>
       </div>
 
       <div className={`${floatClasses} bottom-0`}>
@@ -76,16 +76,6 @@ const IndexPage = () => {
           <div className="rounded-lg text-2xl md:text-5xl font-extralight p-4 m-2">
             I design and code beautifully simple things, and I love what I do.
           </div>
-          <Img
-            className="profile-image relative rounded-full my-12"
-            style={{
-              height: '50vw',
-              width: '50vw',
-              maxHeight: '10rem',
-              maxWidth: '10rem',
-            }}
-            fluid={imageProfile}
-          />
         </div>
 
         <div

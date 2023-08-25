@@ -16,23 +16,6 @@ gsap.fromTo(
 );
 
 gsap.fromTo(
-  '.profile-image',
-  {
-    rotation: -10,
-  },
-  {
-    scrollTrigger: {
-      trigger: '.profile-image',
-      start: 'top center',
-      end: 'bottom top',
-      ease: 'none',
-      scrub: 1,
-    },
-    rotation: 30,
-  }
-);
-
-gsap.fromTo(
   '.about-title',
   {
     y: 100,
